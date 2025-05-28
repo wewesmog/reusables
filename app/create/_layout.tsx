@@ -12,7 +12,7 @@ import { LucideIcon } from 'lucide-react-native';
 type NavItemProps = {
   icon: LucideIcon;
   label: string;
-  route: "/dashboard/" | "/dashboard/create" | "/dashboard/profile";
+  route: "/dashboard" | "/dashboard/learn" | "/dashboard/profile";
   isActive: boolean;
 };
 
@@ -72,75 +72,22 @@ export default function DashboardLayout() {
   return (
     <SafeAreaView className="flex-1">
       {/* Fixed Header */}
-      <View className="bg-cyan-500">
-        <View className="flex-row items-center justify-between p-4">
-          <View className="flex-row items-center gap-3">
-            <Avatar className="h-10 w-10" alt="User Avatar">
-              <AvatarImage source={{ uri: randomAvatar }} />
-              <AvatarFallback>
-                <Text>{randomName.charAt(0)}</Text>
-              </AvatarFallback>
-            </Avatar>
-            <View>
-              <Text className="font-semibold">{randomName}</Text>
-              <Text className="text-sm text-white">Welcome back!</Text>
-            </View>
-          </View>
-        </View>
+      <View>
+        <Text className='text-xl font-fredoka-bold m-2'>Let's Create an exciting Trivia Game!</Text>
+        
+
       </View>
 
       {/* Middle Content */}
-      <View className="flex-1">
+      <View className="flex-1 scroll-y-auto">
         <Slot />
       </View>
 
       {/* Fixed Footer - Navigation */}
-      <View className="bg-cyan-500 pb-safe">
-        <View className="flex-row justify-around items-center p-4">
-          <NavItem 
-            icon={Home}
-            label="Home"
-            route="/dashboard/"
-            isActive={isHomeActive}
-          />
-          
-          <NavItem 
-            icon={BookOpen}
-            label="Learn"
-            route="/create"
-            isActive={pathname === '/create'}
-          />
-          
-          <NavItem 
-            icon={User}
-            label="Profile"
-            route="/dashboard/profile"
-            isActive={pathname === '/dashboard/profile'}
-          />
-          
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Pressable 
-                onPress={handlePress}
-                className="flex-col items-center px-6 py-2 rounded-lg"
-                android_ripple={{ color: 'rgba(255, 255, 255, 0.2)' }}
-              >
-                <Users 
-                  size={24} 
-                  color={isPressed ? "#FFD700" : "white"} 
-                  style={{ transform: [{ scale: isPressed ? 0.95 : 1 }] }}
-                />
-                <Text className={isPressed ? "text-yellow-400 mt-1" : "text-white mt-1"}>
-                  Community
-                </Text>
-              </Pressable>
-            </TooltipTrigger>
-            <TooltipContent sideOffset={5}>
-              <Text className="text-white">Coming soon! 🚀</Text>
-            </TooltipContent>
-          </Tooltip>
+      <View className='pb-safe'>
+        <Text className='text-xl font-fredoka-medium m-2'>Step 1: Choose a Topic</Text>
         </View>
-      </View>
+     
     </SafeAreaView>
   );
 }

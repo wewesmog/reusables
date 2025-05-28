@@ -6,7 +6,7 @@ import { LearningPathCard } from '~/components/ui/learning-path-card';
 import { Grid, GridItem } from '~/components/ui/grid';
 import { Book, Mic, Users, Trophy } from 'lucide-react-native';
 import { router } from 'expo-router';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '~/components/ui/card';
+// import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '~/components/ui/card';
 import { Pressable } from 'react-native';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
