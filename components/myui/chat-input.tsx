@@ -9,15 +9,21 @@ import { Separator } from '~/components/ui/separator';
 interface ChatInputProps {
   welcomeScreen: boolean;
   setWelcomeScreen: (welcomeScreen: boolean) => void;
+  showQuiz: boolean;
+  setShowQuiz: (showQuiz: boolean) => void;
 }
 
-export function ChatInput({ welcomeScreen, setWelcomeScreen }: ChatInputProps) {
+export function ChatInput({ welcomeScreen, setWelcomeScreen, showQuiz, setShowQuiz }: ChatInputProps) {
   const [message, setMessage] = React.useState('');
   return (
     <View className='border border-cyan-200 rounded-lg p-4  bg-white dark:bg-gray-800'>
       {welcomeScreen ? (
         <Text className='text-lg font-fredoka-bold mb-2 text-black dark:text-white'>
           Tell us what you want to create?
+        </Text>
+      ) : showQuiz ? (
+        <Text className='text-lg font-fredoka-bold mb-2 text-black dark:text-white'>
+          What do you think about this quiz?
         </Text>
       ) : (
         <Text className='text-lg font-fredoka-bold mb-2 text-black dark:text-white'>
